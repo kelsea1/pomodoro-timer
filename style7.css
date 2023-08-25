@@ -1,0 +1,110 @@
+.grid-container{
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto minmax(0, 1fr);
+}
+
+.grid-itemx {
+    float: left;
+    width: 25vw;
+}
+.grid-itemW{
+    float: right;
+    width: 65vw;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.timer-box{
+    background-color: rgb(252, 220, 236);
+}
+.clock-box{
+    background-color: rgb(253, 136, 156);
+}
+.grid-containery{
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto;
+}
+.grid-itemy{
+    grid-row: 1/2;
+    margin-left: 20px;
+}
+.timebtn{
+    width: 70px;
+    height: 30px;
+    border: 3px ;
+    border-radius: 12px;
+    background-color: beige;
+    color: black;
+    cursor: pointer;
+    font-family: consolas, monospace;
+    margin-bottom: 10px;
+}
+.timedisplay{
+    font-size: 100px;
+    font-family: 'Courier New', Courier, monospace, monospace;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 59px;
+}
+.clock-container{
+    text-align: center;
+    border: 5px solid;
+    border-color: pink;
+    margin-top: 50px;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;align-items: center;
+    justify-content: center;
+    margin-bottom: 59px;
+}
+.grid-container1{
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto;
+}
+.grid-item1{
+    grid-row: 1/2;
+    margin-left: 20px;
+}
+.timer-box2{
+    background-color: rgb(252, 220, 236);
+}
+.clock-box2{
+    background-color: rgb(245, 125, 191);
+}
+.time-btn2{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 70px;
+    background-color: black;
+    color: antiquewhite;
+    border-radius: 12%;
+}
+.timedisplay2{
+    font-size: 100px;
+    font-family: 'Courier New', Courier, monospace, monospace;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 59px;
+}
+.clock-container2{
+    text-align: center;
+    border: 3px solid;
+    margin-top: 50px;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;align-items: center;
+    justify-content: center;
+    margin-bottom: 59px;
+}
