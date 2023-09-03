@@ -1,24 +1,29 @@
-.grid-container{
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: auto minmax(0, 1fr);
+.body{
+    width: 800px;
+    max-width: 100%;
 }
 
-.grid-itemx {
-    float: left;
-    width: 25vw;
-}
-.grid-itemW{
-    float: right;
-    width: 65vw;
-    margin-left: 20px;
-    margin-right: 10px;
+.container{
+    box-sizing: border-box;
+    position: absolute;
+   margin-left: 10%;
 }
 .timer-box{
     background-color: rgb(252, 220, 236);
+    box-sizing: border-box;
+    height: 650px;
+    width: 900px;
+    position: absolute;
+    left: 15%;
+    top: 1%;
+    bottom: 10%;
 }
 .clock-box{
-    background-color: rgb(253, 136, 156);
+    background-color: pink;
+    padding: 10px;
+    width: 65%;
+    margin-left: 15%;
+    margin-bottom: 10%;
 }
 .grid-containery{
     display: grid;
@@ -27,7 +32,7 @@
 }
 .grid-itemy{
     grid-row: 1/2;
-    margin-left: 20px;
+    margin-left: 70px;
 }
 .timebtn{
     width: 70px;
@@ -49,18 +54,18 @@
 }
 .clock-container{
     text-align: center;
-    border: 5px solid;
-    border-color: pink;
-    margin-top: 50px;
+    border: 7px solid;
+    border-color: rgb(255, 71, 76);
     align-items: center;
-    margin-left: 40px;
-    margin-bottom: 20px;
+    margin-left: 125px;
     padding: 10px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 59px;
+    margin-bottom: 70px;
+    background-color:  rgb(252, 212, 232);
 }
 .grid-container1{
     display: grid;
@@ -71,45 +76,38 @@
     grid-row: 1/2;
     margin-left: 80px;
 }
-.timer-box2{
-    background-color: rgb(252, 220, 236);
-}
-.clock-box2{
-    background-color: rgb(245, 125, 191);
-    height: 5O%;
-    width: 70%;
-    border: 3px;
-    margin-left: 100px;
-    margin-bottom: 60px;
-}
-.timebtn2{
-    display: flex;
-    margin-left: 20px;
-    margin-bottom: 30px;
-    height: 30px;
-    width: 70px;
-    background-color: black;
-    color: antiquewhite;
-    border-radius: 12%;
-}
-.timedisplay2{
-    font-size: 100px;
-    font-family: 'Courier New', Courier, monospace, monospace;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 59px;
-}
-.clock-container2{
+.hr-lines:before{
+    content:" ";
+    display: block;
+    height: 3px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: rgb(248, 109, 109);
+  }
+  .hr-lines{
+    position: relative;
+    max-width: 500px;
+    margin: 100px, 0px;
     text-align: center;
-    border: 3px solid;
-    margin-top: 80px;
-    align-items: center;
-    margin-left: 100px;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;align-items: center;
-    justify-content: center;
-    margin-bottom: 59px;
-}
+  }
+  .hr-lines:after{
+    content:" ";
+    height: 3px;
+    width: 100px;
+    background: rgb(248, 109, 109);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+  .time-buttons{
+    margin-left: 150px;
+    padding: auto;
+    position: absolute;
+    bottom: 15%;
+    padding: 50x;
+  }
+
+  
