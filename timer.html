@@ -2,72 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY TIMER</title>
-    <link rel="stylesheet" href="style7.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY TIMER</title>
+  <link rel="stylesheet" href="style7.css">
 </head>
 
 <body>
-    <div class="Container">
-        <div class="row">
-                  <div class="col-sm-1">
-            <div class="timer-box">
-                <h2 class="hr-lines" style="font-style: oblique; text-align: center; color: pink; margin-top: 20px; margin-left: 20%; font-size: 35px;">Pomodoro Timer</h2>
-                <div class="clock-box">
-                    <div class="grid-containery">
-                        <div class="grid-itemy">
-                            <h3><b style="display: flex;">break length</b></h3>
-                            <div class="btn-left">
-                                <button id="minus">-</button>
-                                <input type="number" value="0" id="input" style="width: 30px; height: auto;" />
-                                <button id="plus">+</button>
-                            </div>
-                        </div>
-                        <div class="grid-itemy">
-                            <h3><b style="display: flex; margin-left: 50px;">sesion length</b></h3>
-                            <div class="btn-left" style="margin-left: 50px;">
-                                <button id="minus1">-</button>
-                                <input type="number" value="0" id="input1" style="width: 30px; height: auto;" />
-                                <button id="plus1">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clock-container">
-                        <span style="font-size: 70px; color: rgb(223, 96, 112);">&#x1F570</span>
-                        <div class="timer" style="font-size: 70px; font-family: 'Times New Roman', Times, serif;">
-                            <span class="minutes">
-                              00
-                            </span>
-                            :
-                            <span class="seconds">
-                              00
-                            </span>
-                          </div>
-                    </div>
-        
-<div class="time-buttons"> 
-    <button class="btn btn-lg btn-success" data-action="start"
-    style="height: 30px; width: 60px; padding: 5px; background-color: rgb(236, 171, 182); border: 2px solid; border-color: rgb(235, 104, 126); ">
-      Start
-    </button>
-    <button class="btn btn-lg btn-danger" data-action="stop"
-    style="height: 30px; width: 60px; padding: 5px; background-color: rgb(236, 171, 182); border: 2px solid; margin-left: 40px; border-color: rgb(235, 104, 126);">
-      Stop
-    </button>
-    <button class="btn btn-lg btn-link btn-block" data-action="reset" 
-    style="height: 30px; width: 60px; padding: 5px; background-color: rgb(236, 171, 182); border: 2px solid; margin-left: 40px; border-color: rgb(235, 104, 126);">
-      Reset
-    </button>
-  </div>
+  <div class="Container">
+    <div class="row">
+      <div class="col-sm-1">
+        <div class="timer-box">
+          <h2 class="hr-lines"
+            style="font-style: oblique; text-align: center; color: pink; margin-top: 20px; margin-left: 20%; font-size: 35px;">
+            Pomodoro Timer</h2>
+          <div class="clock-box">
+            <div class="grid-containery">
+              <div class="grid-itemy">
+                <h3><b style="display: flex;">break length</b></h3>
+                <div class="btn-left">
+                  <button id="breakminus">-</button>
+                  <input type="number" value="0" id="breakinput" style="width: 30px; height: auto;" />
+                  <button id="breakplus">+</button>
                 </div>
+              </div>
+              <div class="grid-itemy">
+                <h3><b style="display: flex; margin-left: 50px;">sesion length</b></h3>
+                <div class="btn-left" style="margin-left: 50px;">
+                  <button id="sessionminus">-</button>
+                  <input type="number" value="0" id="sessioninput" style="width: 30px; height: auto;" />
+                  <button id="sessionplus">+</button>
+                </div>
+              </div>
             </div>
+            <div class="clock-container">
+              <span style="font-size: 70px; color: rgb(223, 96, 112);">&#x1F570</span>
+              <div class="timer" style="font-size: 70px; font-family: 'Times New Roman', Times, serif;">
+                <span class="workMinutes">
+                  00
+                </span>
+                :
+                <span class="seconds">
+                  00
+                </span>
+              </div>
+            </div>
+
+            <div class="time-buttons">
+              <button class="btn btn-lg btn-success" data-action="start"
+                style="height: 30px; width: 60px; padding: 5px; background-color: rgb(236, 171, 182); border: 2px solid; border-color: rgb(235, 104, 126); ">
+                Start
+              </button>
+              <button class="btn btn-lg btn-danger" data-action="stop"
+                style="height: 30px; width: 60px; padding: 5px; background-color: rgb(236, 171, 182); border: 2px solid; margin-left: 40px; border-color: rgb(235, 104, 126);">
+                Stop
+              </button>
+              <button class="btn btn-lg btn-link btn-block" data-action="reset"
+                style="height: 30px; width: 60px; padding: 5px; background-color: rgb(236, 171, 182); border: 2px solid; margin-left: 40px; border-color: rgb(235, 104, 126);">
+                Reset
+              </button>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-       
-        
-        <script src="main.js"></script>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
 </body>
 
 </html>
