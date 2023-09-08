@@ -1,99 +1,73 @@
-const breakminusButton = document.getElementById('breakminus');
-const breakplusButton = document.getElementById('breakplus');
-const breakinputField = document.getElementById('breakinput');
+var sessionLength = 25; // default session length in minutes
+var breakLength = 5; // default break length in minutes
 
-breakminusButton.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue = Number(breakinputField.value) || 0;
-  breakinputField.value = currentValue - 1;
-});
+var timeLeft = 0;
+var timer;
+var running = false;
 
-breakplusButton.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue = Number(breakinputField.value) || 0;
-  breakinputField.value = currentValue + 1;
-});
+function startTimer() {
+  if (!running) {
+    var sessionLengthInput = parseInt(document.getElementById("sessionInput").value);
+    var breakLengthInput = parseInt(document.getElementById("breakInput").value);
 
+    if (!isNaN(sessionLengthInput) && sessionLengthInput > 0) {
+      sessionLength = sessionLengthInput;
+    }
 
-const sessionminusButton = document.getElementById('sessionminus');
-const sessionplusButton = document.getElementById('sessionplus');
-const sessioninputField = document.getElementById('sessioninput');
+    if (!isNaN(breakLengthInput) && breakLengthInput > 0) {
+      breakLength = breakLengthInput;
+    }
 
-sessionminusButton.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue = Number(sessioninputField.value) || 0;
-  sessioninputField.value = currentValue - 1;
-});
+    timeLeft = sessionLength * 60;
 
-sessionplusButton.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue = Number(sessioninputField.value) || 0;
-  sessioninputField.value = currentValue + 1;
-});
+    updateTimer();
 
-
-const btnStartElement = document.querySelector('[data-action="start"]');
-const btnStopElement = document.querySelector('[data-action="stop"]');
-const btnResetElement = document.querySelector('[data-action="reset"]');
-const minutes = document.querySelector('.workMinutes');
-const seconds = document.querySelector('.seconds');
-let timerTime = 0;
-let interval;
-
-workMinutes = workDuration - 1           //25 = 24:59
-breakMinutes = breakDuration - 1        //5 = 4:59 
-breakCount = 0
-let RemainingTime = () =>{
-    seconds = seconds - 1
-    if(seconds === 0){
-        workMinutes = workMinutes - 1
-        if(workMinutes === -1){
-            if(breakCount % 2 === 0){
-               workMinutes = breakMinutes;
-               breakCount++
-            }else{
-               workMinutes = workDuration - 1
-               breakCount++
-            }
-          }
-        seconds = 60
+    timer = setInterval(function () {
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        clearInterval(timer);
+        alert("Time's up! Take a break.");
+        running = false;
+        document.getElementById("startBtn").innerHTML = "Start";
       }
+      updateTimer();
+    }, 1000);
+
+    running = true;
+    document.getElementById("startBtn").innerHTML = "Pause";
+  } else {
+    clearInterval(timer);
+    running = false;
+    document.getElementById("startBtn").innerHTML = "Resume";
+  }
 }
-let timer = setInterval(RemainingTime , 1000)
 
-// const start = () => {
-//   interval = setInterval(incrementTimer, 1000)
-// }
+function updateTimer() {
+  var minutes = Math.floor(timeLeft / 60);
+  var seconds = timeLeft % 60;
 
-// const stop = () => {
-//   clearInterval(interval);
-// }
+  var timerDisplay = document.getElementById("timeLeft");
 
-// const reset = () => {
-//   minutes.innerText = '00';
-//   seconds.innerText = '00';
-// }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
 
-// const pad = (number) => {
-//   return (number < 10) ? '0' + number : number;
-// }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
 
-// const incrementTimer = () => {
-//   timerTime++;
+  timerDisplay.innerHTML = minutes + ":" + seconds;
+}
 
-//   const numberMinutes = Math.floor(timerTime / 60);
-//   const numberSeconds = timerTime % 60;
-
-//   minutes.innerText = pad(numberMinutes);
-//   seconds.innerText = pad(numberSeconds);
-// }
-
-// btnStartElement.addEventListener('click', () => { start() });
-
-// btnStopElement.addEventListener('click', stopTimer = () => {
-//   stop();
-// });
-
-// btnResetElement.addEventListener('click', stopTimer = () => {
-//   reset();
-// });
+function resetTimer() {
+  clearInterval(timer);
+  running = false;
+  timeLeft = 0;
+  sessionLength = 25;
+  breakLength = 5;
+  document.getElementById("sessionInput").value = "";
+  document.getElementById("breakInput").value = "";
+  updateTimer();
+  document.getElementById("startBtn").innerHTML = "Start";
+}
