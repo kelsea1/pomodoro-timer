@@ -22,7 +22,8 @@ function startTimer() {
 
     updateTimer();
 
-    timer = setInterval(function () {
+    // timer = setInterval(function () {
+      timer = setInterval(function toggleTimer() {
       if (timeLeft > 0) {
         timeLeft--;
       } else {
@@ -42,6 +43,7 @@ function startTimer() {
     document.getElementById("startBtn").innerHTML = "Resume";
   }
 }
+
 
 function updateTimer() {
   var minutes = Math.floor(timeLeft / 60);
@@ -71,3 +73,8 @@ function resetTimer() {
   updateTimer();
   document.getElementById("startBtn").innerHTML = "Start";
 }
+
+const backBtn = document.getElementById('back-btn');
+backBtn.addEventListener('click',()=>{
+    window.location.href = 'file:///D:/projects/to%20do%20list/list.html';
+});
